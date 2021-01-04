@@ -1,8 +1,6 @@
-var canvas, backgroundImage;
 var monkey , monkey_running
 var banana ,bananaImage, obstacle, obstacleImage
-var FoodGroup, obstacleGroup;
-var jungleImage;
+var FoodGroup, obstacleGroup
 var score;
 var gameState =0;
 playerCount=0;
@@ -12,14 +10,13 @@ var database;
 
 var form, player, game;
 function preload(){
-
   
   
-  monkey_running =loadImage("images/monkey_0.png","images/monkey_1.png","images/monkey_2.png","images/monkey_3.png","images/monkey_4.png","images/monkey_5.png","images/monkey_6.png","images/monkey_7.png","images/monkey_8.png");
+  monkey_running =loadAnimation("images/monkey_0.png","images/monkey_1.png","images/monkey_2.png","images/monkey_3.png","images/monkey_4.png","images/monkey_5.png","images/monkey_6.png","images/monkey_7.png","images/monkey_8.png")
   
   bananaImage = loadImage("images/banana.png");
   obstaceImage = loadImage("images/obstacle.png");
-  jungleImage= loadImage("images/jungle.png");
+ 
 }
 
 
@@ -38,7 +35,7 @@ function setup() {
    monkey.addImage(bananaImage)
    monkey.scale=0.1
   
-  //creating ground  
+  //creating ground
   ground = createSprite(400,350,900,10);
   ground.velocityX=-0.1;
   ground.x=ground.width/2;
@@ -61,7 +58,7 @@ function draw() {
     game.play();
   }
   if(gameState === 2 ){
-    game.end();
+game.end();
   }
   background(255);
   
